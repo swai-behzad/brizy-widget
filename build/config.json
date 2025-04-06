@@ -1,0 +1,21 @@
+{
+  "name": "Brizy.ThirdParty",
+  "title": "Notice",
+  "version": "1.0.3",
+  "category": "cat",
+  "keywords": [
+    "third party"
+  ],
+  "editorScripts": [
+    "index.editor.js"
+  ],
+  "viewScripts": [
+    "index.view.js"
+  ],
+  "editorStyles": [
+    "index.editor.css"
+  ],
+  "viewStyles": [
+    "index.view.css"
+  ]
+}
