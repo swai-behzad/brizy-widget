@@ -13,17 +13,38 @@ Brizy.registerComponent({
   options: () => {
     return [
       {
-        id: "popover",
-        type: "popover",
-        config: {
-          size: "xlarge"
-        },
-        options: [
+        toolbar: [
           {
-            id: "changeText",
-            type: "inputText",
-            label: "Change Text",
-            placeholder: "Type to change text"
+            id: "changeTextPopover",
+            type: "popover",
+            config: {
+              size: "xlarge"
+            },
+            options: [
+              {
+                id: "changeTextInput",
+                type: "inputText",
+                label: "Change Text",
+                placeholder: "Type to change text1"
+              },
+              {
+                id: "changeTextInput2",
+                type: "inputText",
+                label: "Change Text",
+                placeholder: "Type to change text2"
+              }
+            ]
+          },
+          {
+            id: "togglePopover",
+            type: "popover",
+            options: [
+              {
+                id: "toggleSwitch",
+                type: "switch",
+                label: "toggle"
+              }
+            ]
           }
         ]
       }
