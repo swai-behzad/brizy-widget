@@ -1,5 +1,9 @@
 import React from 'react';
 
+// interface TextboxEditorInterface {
+//    content: string
+// }
+
 export function TextboxEditor({ options, setOptionValue }: any) {
 //   const { content, typography, color } = options;
 
@@ -20,7 +24,7 @@ export function TextboxEditor({ options, setOptionValue }: any) {
    //    {content}
    //  </div>
    <div>
-
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, assumenda?
    </div>
   );
 }
