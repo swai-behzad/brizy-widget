@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function TextboxEditor({ options, setOptionValue }: any) {
-  const { content, typography, color } = options;
+//   const { content, typography, color } = options;
 
   return (
    //  <div

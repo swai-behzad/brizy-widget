@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function TextboxView({ options }: any) {
-  const { content, typography, color } = options;
+//   const { content, typography, color } = options;
 
   return (
    //  <p
@@ -14,7 +14,7 @@ export function TextboxView({ options }: any) {
    //    {content}
    //  </p>
    <p>
-      
+
    </p>
   );
 }
