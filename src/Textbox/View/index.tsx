@@ -1,10 +1,10 @@
 import React from 'react';
 
-// interface TextboxViewInterface {
-//    content: string
-// }
+interface TextboxViewInterface {
+   content: string
+}
 
-export function TextboxView({ content }: any) {
+export function TextboxView({ content }: TextboxViewInterface) {
 //   const { content, typography, color } = options;
 
   return (
@@ -18,8 +18,8 @@ export function TextboxView({ content }: any) {
    //    {content}
    //  </p>
    <p>
-      {content}
-      &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, assumenda?
+      {content} &nbsp;---&nbsp;
+      View Component
    </p>
   );
 }
