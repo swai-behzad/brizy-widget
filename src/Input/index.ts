@@ -33,11 +33,11 @@ Brizy.registerComponent({
                 type: "inputText",
                 label: "Change Text",
                 placeholder: "Type to change text3",
-                value: inputValue.value,
+                value: inputValue,
                 default: {
                   value: "default value"
                 },
-                disabled: inputValue.value === "disbaled"
+                disabled: inputValue === "disbaled"
               },
               {
                 id: "toolbarButton",

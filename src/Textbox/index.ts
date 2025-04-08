@@ -16,38 +16,31 @@ Brizy.registerComponent({
         content: "hello world",
         toolbar: [
           {
-            id: "changeTextPopover",
+            id: "typographyPopover",
             type: "popover",
+            position: 100,
+            devices: "all",
             config: {
-              size: "xlarge"
+              placement: "bottom"
             },
             options: [
               {
-                id: "changeTextInput",
-                type: "inputText",
-                label: "Change Text",
-                placeholder: "Type to change text1",
-                value: "",
-                default: {
-                  value: "Default Value"
+                id: "typographyControl",
+                type: "typography",
+                devices: "all",
+                config: {
+                  fontFamily: true,
+                  fontSize: {
+                    min: 8
+                  },
+                  lineHeight: {
+                    min: 1
+                  },
+                  letterSpacing: {
+                    min: -30,
+                    max: 30
+                  }
                 }
-              },
-              {
-                id: "changeTextInput2",
-                type: "inputText",
-                label: "Change Text",
-                placeholder: "Type to change text2"
-              }
-            ]
-          },
-          {
-            id: "togglePopover",
-            type: "popover",
-            options: [
-              {
-                id: "toggleSwitch",
-                type: "switch",
-                label: "toggle"
               }
             ]
           }
