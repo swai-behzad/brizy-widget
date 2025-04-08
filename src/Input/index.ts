@@ -44,7 +44,6 @@ Brizy.registerComponent({
                 type: "button",
                 onClick: () => {
                   console.log(props);
-                  inputValue = "disbaled";
                   console.log(inputValue);
                 },
                 value: "dawdawd",
