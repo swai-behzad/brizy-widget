@@ -10,7 +10,7 @@ export const View = (props: Props): ReactElement => {
   return (
     <div
       className="mapThirdComponent"
-      style={{ width: `${width}${widthSuffix}` }}
+      style={{ width: `${width}${widthSuffix}`, height: `${height}${widthSuffix}` }}
     >
       <iframe src={iframeSrc} title="map" />
     </div>

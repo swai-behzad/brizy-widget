@@ -10,7 +10,7 @@ export const Editor = (props: Props): ReactElement => {
   return (
     <div
       className="mapThirdComponent"
-      style={{ pointerEvents: "none", width: `${width}${widthSuffix}` }}
+      style={{ pointerEvents: "none", width: `${width}${widthSuffix}`, height: `${height}${widthSuffix}` }}
     >
       <iframe src={iframeSrc} title="map" />
     </div>
