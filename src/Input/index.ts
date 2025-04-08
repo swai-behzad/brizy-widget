@@ -14,7 +14,7 @@ Brizy.registerComponent({
   },
   options: (props: any) => {
     const { getValue } = props;
-    let inputValue = getValue("toolbarInput");
+    const inputValue = getValue("toolbarInput");
     let disabled = false;
 
     return [
