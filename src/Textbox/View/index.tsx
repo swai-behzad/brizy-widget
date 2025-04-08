@@ -18,7 +18,8 @@ export function TextboxView({ content }: any) {
    //    {content}
    //  </p>
    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, assumenda?
+      {content}
+      &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, assumenda?
    </p>
   );
 }

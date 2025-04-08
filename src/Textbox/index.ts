@@ -13,6 +13,7 @@ Brizy.registerComponent({
   options: () => {
     return [
       {
+        content: "hello world",
         toolbar: [
           {
             id: "changeTextPopover",

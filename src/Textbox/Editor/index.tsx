@@ -4,27 +4,24 @@ import React from 'react';
 //    content: string
 // }
 
-export function TextboxEditor({ options, setOptionValue }: any) {
+export function TextboxEditor({ options, setOptionValue, content }: any) {
 //   const { content, typography, color } = options;
 
   return (
-   //  <div
-   //    contentEditable
-   //    suppressContentEditableWarning
-   //    onInput={(e) => setOptionValue('content', e.currentTarget.textContent)}
-   //    style={{
-   //      padding: '10px',
-   //      minHeight: '40px',
-   //      border: '1px dashed #ccc',
-   //      ...(typography?.style || {}),
-   //      color: color?.value || 'inherit',
-   //    }}
-   //    className={typography?.className}
-   //  >
-   //    {content}
-   //  </div>
-   <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, assumenda?
-   </div>
+    <div
+      contentEditable
+      suppressContentEditableWarning
+      onInput={(e) => setOptionValue('content', e.currentTarget.textContent)}
+      style={{
+        padding: '10px',
+        minHeight: '40px',
+        border: '1px dashed #ccc',
+      //   ...(typography?.style || {}),
+      //   color: color?.value || 'inherit',
+      }}
+      // className={typography?.className}
+    >
+      {content}
+    </div>
   );
 }
