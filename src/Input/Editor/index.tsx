@@ -19,7 +19,9 @@ export const InputEditor = (props: Props): JSX.Element => {
         onClick={() => {
           console.log(props);
         }}
-      ></button>
+      >
+         click
+      </button>
     </div>
   );
 };

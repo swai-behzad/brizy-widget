@@ -13,10 +13,13 @@ Brizy.registerComponent({
     view: InputView
   },
   options: (props: any) => {
+    const { getValue } = props;
+    let inputValue = getValue("toolbarInput");
+    let disabled = false;
+
     return [
       {
         selector: ".brz-input",
-        content: "this is my new content 2",
         toolbar: [
           {
             id: "inputPopover",
@@ -24,21 +27,25 @@ Brizy.registerComponent({
             config: {
               size: "large"
             },
-            content: "this is my new content 3",
             options: [
               {
                 id: "toolbarInput",
                 type: "inputText",
                 label: "Change Text",
                 placeholder: "Type to change text3",
-                content: "this is my new content 4"
+                value: inputValue,
+                default: {
+                  value: "default value"
+                },
+                disabled: inputValue === "disbaled"
               },
               {
                 id: "toolbarButton",
-                content: "this is my new content 5",
                 type: "button",
                 onClick: () => {
-                  console.log("button clicked");
+                  console.log(props);
+                  inputValue = "disbaled";
+                  console.log(inputValue);
                 },
                 value: "dawdawd",
                 config: {
@@ -53,8 +60,9 @@ Brizy.registerComponent({
   }
 });
 
-export const getToolbarContols = ({ getValue }: any) => {
+const getToolbarContols = ({ getValue }: any) => {
   const inputValue = getValue("toolbarInput");
+  let disabled = false;
 
   return [
     {
@@ -82,7 +90,8 @@ export const getToolbarContols = ({ getValue }: any) => {
               content: "this is my new content 5",
               type: "button",
               onClick: () => {
-                console.log("button clicked");
+                disabled = true;
+                console.log(disabled);
               },
               value: "dawdawd",
               config: {
