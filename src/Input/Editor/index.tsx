@@ -1,21 +1,19 @@
 import { JSX } from "react";
 
 interface Props {
-  value: string;
-  onChange: (v: string) => string;
+  toolbarInput: string;
+  onChange: (v: string) => void;
 }
 
 export const InputEditor = (props: Props): JSX.Element => {
-  console.log(props);
-
-  const { value } = props;
+  const { toolbarInput, onChange } = props;
 
   return (
     <div className="brz-input">
       <input
         type="text"
-        value={value}
-        onChange={() => console.log("changed", value)}
+        value={toolbarInput}
+        onChange={(e) => onChange(e.target.value)}
       />
       <button
         onClick={() => {
