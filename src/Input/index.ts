@@ -14,7 +14,7 @@ Brizy.registerComponent({
   },
   options: (props: any) => {
     const { getValue } = props;
-    const inputValue = getValue("toolbarInput");
+    const  inputValue = getValue("toolbarInput");
     let disabled = false;
 
     return [
@@ -33,11 +33,11 @@ Brizy.registerComponent({
                 type: "inputText",
                 label: "Change Text",
                 placeholder: "Type to change text3",
-                value: inputValue,
+                value: inputValue.value,
                 default: {
                   value: "default value"
                 },
-                disabled: inputValue === "disbaled"
+                disabled: inputValue.value === "disbaled"
               },
               {
                 id: "toolbarButton",
