@@ -16,9 +16,34 @@ Brizy.registerComponent({
         content: "hello world",
         toolbar: [
           {
-            id: "typographyPopover",
+            id: "editTextPopover",
             type: "popover",
             position: 100,
+            devices: "all",
+            config: {
+              placement: "bottom",
+              size: "auto",
+              icon: "nc-pen"
+            },
+            options: [
+              {
+                id: "editTextControl",
+                type: "textarea",
+                label: "Text",
+                devices: "all",
+                icon: "nc-star",
+                display: "block",
+                placeholder: "type your text",
+                default: {
+                  value: "default text"
+                }
+              }
+            ]
+          },
+          {
+            id: "typographyPopover",
+            type: "popover",
+            position: 200,
             devices: "all",
             config: {
               placement: "bottom",
