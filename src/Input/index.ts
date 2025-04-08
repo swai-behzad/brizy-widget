@@ -1,24 +1,17 @@
-import classNames from "classnames";
 import React, { JSX } from "react";
+import { Brizy } from "@brizy/core";
+import { InputEditor } from "./Editor";
+import { InputView } from "./View";
 
-interface Props {
-  value: string;
-  onChange: (v: string) => void;
-}
-
-export const Input = (props: Props): JSX.Element => {
-  const { value, onChange } = props;
-  return (
-    <div className="brz-input">
-      <input type="text" value={value} onChange={({ target: { value } }): void => onChange(value)} />
-    </div>
-  );
-};
-
-Brizy.registerComponent(Input, {
+Brizy.registerComponent({
   id: "ThirdParty.Input",
   title: "My Input",
-  options: (props) => {
+  category: "custom",
+  component: {
+    editor: InputEditor,
+    view: InputView
+  },
+  options: (props: any) => {
     return [
       {
         selector: ".brz-input",
