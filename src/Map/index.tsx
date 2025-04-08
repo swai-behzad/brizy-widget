@@ -48,8 +48,8 @@ Brizy.registerComponent({
                         }
                       },
                       {
-                        id: "heght",
-                        label: "heght",
+                        id: "height",
+                        label: "Height",
                         type: "slider",
                         config: {
                           min: 0,
