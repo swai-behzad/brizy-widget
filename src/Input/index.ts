@@ -40,6 +40,7 @@ Brizy.registerComponent({
                 onClick: () => {
                   console.log("button clicked");
                 },
+                value: "dawdawd",
                 config: {
                   text: "save"
                 }

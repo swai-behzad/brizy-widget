@@ -26,7 +26,11 @@ Brizy.registerComponent({
                 id: "changeTextInput",
                 type: "inputText",
                 label: "Change Text",
-                placeholder: "Type to change text1"
+                placeholder: "Type to change text1",
+                value: "",
+                default: {
+                  value: "Default Value"
+                }
               },
               {
                 id: "changeTextInput2",

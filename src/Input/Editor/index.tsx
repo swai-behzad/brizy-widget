@@ -1,10 +1,11 @@
 import { JSX } from "react";
 
-// interface Props {
-//   value: string;
-// }
+interface Props {
+  value: string;
+  onChange: (v: string) => string;
+}
 
-export const InputEditor = (props: any): JSX.Element => {
+export const InputEditor = (props: Props): JSX.Element => {
   console.log(props);
 
   const { value } = props;
