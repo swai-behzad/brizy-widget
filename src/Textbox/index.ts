@@ -21,7 +21,9 @@ Brizy.registerComponent({
             position: 100,
             devices: "all",
             config: {
-              placement: "bottom"
+              placement: "bottom",
+              size: "auto",
+              icon: "nc-font"
             },
             options: [
               {
@@ -39,7 +41,8 @@ Brizy.registerComponent({
                   letterSpacing: {
                     min: -30,
                     max: 30
-                  }
+                  },
+                  TextScripts: ["sub", "super"]
                 }
               }
             ]
