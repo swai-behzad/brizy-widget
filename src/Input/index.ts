@@ -5,6 +5,7 @@ import { InputView } from "./View";
 
 Brizy.registerComponent({
   id: "ThirdParty.Input",
+  content: "this is my new content",
   title: "My Input",
   category: "custom",
   component: {
@@ -15,6 +16,7 @@ Brizy.registerComponent({
     return [
       {
         selector: ".brz-input",
+        content: "this is my new content 2",
         toolbar: [
           {
             id: "inputPopover",
@@ -22,15 +24,18 @@ Brizy.registerComponent({
             config: {
               size: "large"
             },
+            content: "this is my new content 3",
             options: [
               {
                 id: "toolbarInput",
                 type: "inputText",
                 label: "Change Text",
-                placeholder: "Type to change text3"
+                placeholder: "Type to change text3",
+                content: "this is my new content 4",
               },
               {
                 id: "toolbarButton",
+                content: "this is my new content 5",
                 type: "button",
                 onClick: () => {
                   console.log("button clicked");
