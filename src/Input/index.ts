@@ -17,18 +17,27 @@ Brizy.registerComponent({
         selector: ".brz-input",
         toolbar: [
           {
-            id: "toolbarCurrentElement",
+            id: "inputPopover",
             type: "popover",
             config: {
-              icon: "nc-input",
-              title: "Input"
+              size: "large"
             },
-            devices: "desktop",
             options: [
               {
-                id: "link",
+                id: "toolbarInput",
                 type: "inputText",
-                devices: "desktop"
+                label: "Change Text",
+                placeholder: "Type to change text3"
+              },
+              {
+                id: "toolbarButton",
+                type: "button",
+                onClick: () => {
+                  console.log("button clicked");
+                },
+                config: {
+                  text: "save"
+                }
               }
             ]
           }
