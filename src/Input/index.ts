@@ -31,7 +31,7 @@ Brizy.registerComponent({
                 type: "inputText",
                 label: "Change Text",
                 placeholder: "Type to change text3",
-                content: "this is my new content 4",
+                content: "this is my new content 4"
               },
               {
                 id: "toolbarButton",
@@ -52,3 +52,46 @@ Brizy.registerComponent({
     ];
   }
 });
+
+export const getToolbarContols = ({ getValue }: any) => {
+  const inputValue = getValue("toolbarInput");
+
+  return [
+    {
+      selector: ".brz-input",
+      content: "this is my new content 2",
+      toolbar: [
+        {
+          id: "inputPopover",
+          type: "popover",
+          config: {
+            size: "large"
+          },
+          content: "this is my new content 3",
+          options: [
+            {
+              id: "toolbarInput",
+              type: "inputText",
+              label: "Change Text",
+              placeholder: "Type to change text3",
+              content: "this is my new content 4",
+              disabled: inputValue === "disabled"
+            },
+            {
+              id: "toolbarButton",
+              content: "this is my new content 5",
+              type: "button",
+              onClick: () => {
+                console.log("button clicked");
+              },
+              value: "dawdawd",
+              config: {
+                text: "save"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ];
+};
