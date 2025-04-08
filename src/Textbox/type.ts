@@ -1,4 +1,5 @@
 export interface TextboxInterface {
+  editTextControl: string;
   typographyControlBold: boolean;
   typographyControlFontFamily: string;
   typographyControlFontFamilyType: "google" | "upload" | "system";

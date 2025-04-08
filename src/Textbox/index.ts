@@ -10,7 +10,10 @@ Brizy.registerComponent({
     editor: TextboxEditor,
     view: TextboxView
   },
-  options: () => {
+  options: ({}) => {
+
+    let className = ""
+
     return [
       {
         content: "hello world",
@@ -37,6 +40,17 @@ Brizy.registerComponent({
                 default: {
                   value: "default text"
                 }
+              },
+              {
+               id: "AIGenerateControl",
+               type: "button",
+               onclick: () => {
+                  console.log("generate clicked!");
+                  className = "generate with ai"
+               },
+               config: {
+                  text: "generate with AI"
+               }
               }
             ]
           },
@@ -55,6 +69,7 @@ Brizy.registerComponent({
                 id: "typographyControl",
                 type: "typography",
                 devices: "all",
+                className: className,
                 config: {
                   fontFamily: true,
                   fontSize: {
