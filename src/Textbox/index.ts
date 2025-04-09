@@ -43,7 +43,7 @@ Brizy.registerComponent({
               {
                 id: "AIGenerateControl",
                 type: "button",
-                onclick: () => {
+                onClick: () => {
                   console.log("generate clicked!");
                 },
                 config: {
@@ -53,49 +53,49 @@ Brizy.registerComponent({
               }
             ]
           },
-         //  {
-         //    id: "editTextPopoverTest",
-         //    type: "popover",
-         //    position: 100,
-         //    devices: "all",
-         //    config: {
-         //      placement: "bottom",
-         //      size: "auto",
-         //      icon: "nc-pen"
-         //    },
-         //    options: [
-         //      {
-         //        id: "videoType",
-         //        type: "select",
-         //        choices: [
-         //          { title: "Youtube", value: "youtube" },
-         //          { title: "Custom", value: "custom" }
-         //        ]
-         //      },
-         //      {
-         //        id: "AIGenerateControlTest",
-         //        type: "button",
-         //        onclick: () => {
-         //          console.log("generate clicked!");
-         //        },
-         //        config: {
-         //          text: "generate with AI for test"
-         //        },
-         //        disabled: videoType === "custom"
-         //      },
-         //      {
-         //        id: "change videoType",
-         //        type: "button",
-         //        onclick: () => {
-         //          console.log("generate clicked!");
-         //        },
-         //        config: {
-         //          text: "generate with AI for test"
-         //        },
-         //        disabled: videoType === "custom"
-         //      }
-         //    ]
-         //  },
+          {
+            id: "editTextPopoverTest",
+            type: "popover",
+            position: 100,
+            devices: "all",
+            config: {
+              placement: "bottom",
+              size: "auto",
+              icon: "nc-pen"
+            },
+            options: [
+              {
+                id: "videoType",
+                type: "select",
+                choices: [
+                  { title: "Youtube", value: "youtube" },
+                  { title: "Custom", value: "custom" }
+                ]
+              },
+              {
+                id: "AIGenerateControlTest",
+                type: "button",
+                onClick: () => {
+                  console.log("generate clicked!");
+                },
+                config: {
+                  text: "generate with AI for test"
+                },
+                disabled: videoType === "custom"
+              },
+              {
+                id: "change videoType",
+                type: "button",
+                onClick: () => {
+                  console.log("generate clicked!");
+                },
+                config: {
+                  text: "generate with AI for test"
+                },
+                disabled: videoType === "custom"
+              }
+            ]
+          },
           {
             id: "typographyPopover",
             type: "popover",
