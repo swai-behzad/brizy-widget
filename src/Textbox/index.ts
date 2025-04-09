@@ -79,7 +79,7 @@ Brizy.registerComponent({
                   console.log("generate clicked!");
                 },
                 config: {
-                  text: videoType
+                  text: "test"
                 },
                 disabled: videoType === "custom"
               },
