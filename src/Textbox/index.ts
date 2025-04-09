@@ -79,7 +79,7 @@ Brizy.registerComponent({
                   console.log("generate clicked!");
                 },
                 config: {
-                  text: "generate with AI for test"
+                  text: videoType
                 },
                 disabled: videoType === "custom"
               },
@@ -87,12 +87,12 @@ Brizy.registerComponent({
                 id: "change videoType",
                 type: "button",
                 onClick: () => {
-                  console.log("generate clicked!");
+                  console.log(inputValue);
+                  console.log(videoType);
                 },
                 config: {
-                  text: "generate with AI for test"
+                  text: "log values"
                 },
-                disabled: videoType === "custom"
               }
             ]
           },
