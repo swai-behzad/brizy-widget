@@ -10,9 +10,9 @@ Brizy.registerComponent({
     editor: TextboxEditor,
     view: TextboxView
   },
-  options: ({}) => {
-
-    let className = ""
+  options: ({ getValue }: any) => {
+    const inputValue = getValue("editTextControl");
+    const videoType = getValue("videoType");
 
     return [
       {
@@ -42,15 +42,58 @@ Brizy.registerComponent({
                 }
               },
               {
-               id: "AIGenerateControl",
-               type: "button",
-               onclick: () => {
+                id: "AIGenerateControl",
+                type: "button",
+                onclick: () => {
                   console.log("generate clicked!");
-                  className = "generate with ai"
-               },
-               config: {
+                },
+                config: {
                   text: "generate with AI"
-               }
+                },
+                disabled: inputValue === "disabled"
+              }
+            ]
+          },
+          {
+            id: "editTextPopoverTest",
+            type: "popover",
+            position: 100,
+            devices: "all",
+            config: {
+              placement: "bottom",
+              size: "auto",
+              icon: "nc-pen"
+            },
+            options: [
+              {
+                id: "videoType",
+                type: "select",
+                choices: [
+                  { title: "Youtube", value: "youtube" },
+                  { title: "Custom", value: "custom" }
+                ]
+              },
+              {
+                id: "AIGenerateControlTest",
+                type: "button",
+                onclick: () => {
+                  console.log("generate clicked!");
+                },
+                config: {
+                  text: "generate with AI for test"
+                },
+                disabled: videoType === "custom"
+              },
+              {
+                id: "change videoType",
+                type: "button",
+                onclick: () => {
+                  console.log("generate clicked!");
+                },
+                config: {
+                  text: "generate with AI for test"
+                },
+                disabled: videoType === "custom"
               }
             ]
           },
@@ -69,7 +112,6 @@ Brizy.registerComponent({
                 id: "typographyControl",
                 type: "typography",
                 devices: "all",
-                className: className,
                 config: {
                   fontFamily: true,
                   fontSize: {
