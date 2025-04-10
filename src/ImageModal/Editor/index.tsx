@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { ImageModalInterface } from "../type";
 import { Modal } from "../../_components/Modal";
 
 export function ImageModalEditor(props: ImageModalInterface) {
+  const [show, setShow] = useState(false);
+
   return (
     <div>
-      <Modal />
+      <Modal show={show} setShow={setShow} />
       <p>ImageModal widget</p>
+      <button onClick={() => setShow(true)}>show modal</button>
     </div>
   );
 }

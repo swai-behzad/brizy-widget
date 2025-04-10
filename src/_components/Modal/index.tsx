@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-interface ModalInterface {}
+interface ModalInterface {
+  show: boolean;
+  setShow: (value: boolean) => void;
+}
 
-export const Modal: React.FC = ({}: ModalInterface) => {
-  const [show, setShow] = useState(false);
-
+export const Modal: React.FC<ModalInterface> = ({ show, setShow }) => {
   return (
     <div
       onClick={() => setShow(false)}
