@@ -11,34 +11,34 @@ export const ImageModalEditor: React.FC<ImageModalInterface> = ({
   const [data, setData] = useState<SwaiResponse | null>(null);
   const [value, setValue] = useState<string>("");
 
-  useEffect(() => {
-    const fetchData = async (): Promise<void> => {
-      try {
-        const swid = getLocalStorageValue("swid");
-        const res = await fetch("/api/widgets", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${swid}`
-          },
-          body: JSON.stringify({
-            widgetId,
-            value: "your-value-here" // Replace with actual value or get it from props/state
-          })
-        });
+//   useEffect(() => {
+//     const fetchData = async (): Promise<void> => {
+//       try {
+//         const swid = getLocalStorageValue("swid");
+//         const res = await fetch("/api/widgets", {
+//           method: "POST",
+//           headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${swid}`
+//           },
+//           body: JSON.stringify({
+//             widgetId,
+//             value: "your-value-here" // Replace with actual value or get it from props/state
+//           })
+//         });
 
-        if (!res.ok) throw new Error("Failed to fetch");
+//         if (!res.ok) throw new Error("Failed to fetch");
 
-        const result: SwaiResponse = await res.json();
-        setData(result);
-        console.log("Fetched data:", result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+//         const result: SwaiResponse = await res.json();
+//         setData(result);
+//         console.log("Fetched data:", result);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//       }
+//     };
 
-    fetchData();
-  }, [widgetId]);
+//     fetchData();
+//   }, [widgetId]);
 
   const handleWidget = async () => {
     console.log("focus out!!!");
