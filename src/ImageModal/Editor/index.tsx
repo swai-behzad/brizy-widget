@@ -15,7 +15,7 @@ export const ImageModalEditor: React.FC<ImageModalInterface> = (
     const fetchData = async (): Promise<void> => {
       try {
         const swid = getLocalStorageValue("swid");
-        const res = await fetch("192.168.24.100:3000/widget", {
+        const res = await fetch("https://f183-172-191-160-209.ngrok-free.app/widget", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export const ImageModalEditor: React.FC<ImageModalInterface> = (
 
     try {
       const swid = getLocalStorageValue("swid");
-      const res = await fetch("192.168.24.100:3000/widget", {
+      const res = await fetch("https://f183-172-191-160-209.ngrok-free.app/widget", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
