@@ -36,8 +36,12 @@ Brizy.registerComponent({
         {
           id: "duplicate",
           type: "button",
-          onClick: () => {},
-          disabled: videoType === "custom"
+          onClick: () => {console.log("test");
+          },
+          disabled: videoType === "custom",
+          config: {
+            text: "show modal"
+          }
         }
       ];
     };
