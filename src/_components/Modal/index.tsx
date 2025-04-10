@@ -15,7 +15,6 @@ export const Modal: React.FC = ({}: ModalInterface) => {
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#f3f4f6",
-        position: "absolute",
         zIndex: "99999"
       }}
     >

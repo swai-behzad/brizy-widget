@@ -4,8 +4,8 @@ import { ImageModalEditor } from "./Editor";
 import { ImageModalView } from "./View";
 
 Brizy.registerComponent({
-  id: "ThirdParty.Textbox",
-  title: "Textbox",
+  id: "ThirdParty.ImageModal",
+  title: "ImageModal",
   category: "custom",
   component: {
     editor: ImageModalEditor,
