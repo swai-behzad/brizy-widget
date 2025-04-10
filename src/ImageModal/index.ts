@@ -37,7 +37,7 @@ Brizy.registerComponent({
           id: "duplicate",
           type: "button",
           onClick: () => {
-            console.log("test");
+            console.log("use getToolbarContols");
           },
           disabled: videoType === "custom",
           config: {
@@ -82,9 +82,11 @@ Brizy.registerComponent({
               {
                 id: "duplicate",
                 type: "button",
-                onClick: () => {},
+                onClick: () => {
+                  console.log("test");
+                },
                 config: {
-                  text: "test"
+                  text: "use option"
                 }
               }
             ]
