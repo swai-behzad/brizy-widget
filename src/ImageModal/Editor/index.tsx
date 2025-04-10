@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ImageModalInterface } from "../type";
 import { Modal } from "../../_components/Modal";
 
-export function ImageModalEditor(props: ImageModalInterface) {
+export function ImageModalEditor(props: any) {
   const [show, setShow] = useState(false);
 
   return (
@@ -10,6 +10,7 @@ export function ImageModalEditor(props: ImageModalInterface) {
       <Modal show={show} setShow={setShow} />
       <p>ImageModal widget</p>
       <button onClick={() => setShow(true)}>show modal</button>
+      <button onClick={() => console.log(props)}>log props</button>
     </div>
   );
 }

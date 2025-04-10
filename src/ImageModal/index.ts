@@ -11,42 +11,6 @@ Brizy.registerComponent({
     view: ImageModalView
   },
   options: () => {
-    const getToolbarContols = ({ getValue }: any) => {
-      const videoType = getValue("videoType");
-
-      return [
-        {
-          id: "modalButton",
-          type: "button",
-          onClick: () => {
-            console.log("show modal clicked!");
-          },
-          config: {
-            text: "show modal"
-          }
-        },
-        {
-          id: "videoType",
-          type: "select",
-          choices: [
-            { title: "Youtube", value: "youtube" },
-            { title: "Custom", value: "custom" }
-          ]
-        },
-        {
-          id: "duplicate",
-          type: "button",
-          onClick: () => {
-            console.log("use getToolbarContols");
-          },
-          disabled: videoType === "custom",
-          config: {
-            text: "test"
-          }
-        }
-      ];
-    };
-
     return [
       {
         toolbar: [
@@ -83,10 +47,10 @@ Brizy.registerComponent({
                 id: "duplicate",
                 type: "button",
                 onClick: () => {
-                  console.log("test");
+                  console.log("use option");
                 },
                 config: {
-                  text: "use option"
+                  text: "test"
                 }
               }
             ]
