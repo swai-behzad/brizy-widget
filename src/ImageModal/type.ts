@@ -1,5 +1,6 @@
 export interface ImageModalInterface {
   _id: string;
+  thirdPartyId: string;
   device: string;
 }
 
