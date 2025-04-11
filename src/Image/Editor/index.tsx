@@ -1,6 +1,6 @@
 import { ReactElement, useState } from "react";
 import { Props } from "../types";
-import "./View.css"; // Import a CSS file for styling (optional)
+// import "./View.css"; // Import a CSS file for styling (optional)
 
 
 export const View = (props: Props): ReactElement => {
