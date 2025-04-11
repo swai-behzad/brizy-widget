@@ -14,7 +14,7 @@ Brizy.registerComponent({
     view: View
   },
   title: "SWAI Image",
-  category: "custom",
+  category: "essentials",
   options: () => {
     return [
       {
