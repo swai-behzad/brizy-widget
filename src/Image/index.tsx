@@ -13,19 +13,19 @@ Brizy.registerComponent({
     editor: Editor,
     view: View
   },
-  title: "Image",
+  title: "SWAI Image",
   category: "custom",
   options: () => {
     return [
       {
-        selector: ".mapThirdComponent",
+        selector: ".imageView",
         toolbar: [
           {
             id: "toolbarCurrentElement",
             type: "popover",
             config: {
-              icon: "nc-pin",
-              title: "Map"
+              icon: "nc-picture",
+              title: "Select Image"
             },
             devices: "desktop",
             position: 90,
@@ -36,32 +36,15 @@ Brizy.registerComponent({
                 tabs: [
                   {
                     id: "tabCurrentElement",
-                    label: "Map",
+                    label: "Image",
                     options: [
                       {
-                        id: "address",
-                        label: "Address",
+                        id: "source",
+                        label: "Source",
                         type: "inputText",
-                        placeholder: "Enter address",
+                        placeholder: "Enter Image URL",
                         default: {
-                          value: "Chisinau"
-                        }
-                      },
-                      {
-                        id: "height",
-                        label: "Height",
-                        type: "slider",
-                        config: {
-                          min: 0,
-                          max: 100,
-                          units: [
-                            { title: "px", value: "px" },
-                            { title: "%", value: "%" }
-                          ]
-                        },
-                        default: {
-                          value: 100,
-                          suffix: "%"
+                          value: ""
                         }
                       }
                     ]
