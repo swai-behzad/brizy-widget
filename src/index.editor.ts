@@ -1,1 +1,2 @@
-import "./SwaiImage";
+import "./Map";
+import "./Counter";

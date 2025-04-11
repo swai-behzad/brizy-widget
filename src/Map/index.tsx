@@ -8,12 +8,12 @@ const Map = { Editor, View };
 export default Map;
 
 Brizy.registerComponent({
-  id: "Brizy.ThirdParty.SwaiImage",
+  id: "Brizy.ThirdParty.Map",
   component: {
     editor: Editor,
     view: View
   },
-  title: "Image",
+  title: "Map",
   category: "custom",
   options: () => {
     return [
@@ -48,8 +48,8 @@ Brizy.registerComponent({
                         }
                       },
                       {
-                        id: "height",
-                        label: "Height",
+                        id: "width",
+                        label: "Width",
                         type: "slider",
                         config: {
                           min: 0,

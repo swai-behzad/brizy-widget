@@ -1,21 +1,18 @@
 {
-  "name": "brizywidget",
+  "name": "thirdparty-widgets",
   "version": "1.0.0",
   "description": "",
   "main": "build/main.js",
   "scripts": {
     "build": "brizy-scripts build",
-    "start": "brizy-scripts start",
+    "start": "PORT=2222 brizy-scripts start",
     "tsc": "tsc"
   },
   "license": "MIT",
-  "dependencies": {
-    "@brizy/core": "^1.0.10"
-  },
   "devDependencies": {
-    "@brizy/scripts": "^1.1.2",
-    "@types/react": "^19.1.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "@brizy/scripts": "^1.1.1",
+    "@types/react": "^18.3.4",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
   }
 }

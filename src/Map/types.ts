@@ -1,6 +1,6 @@
 export interface Props {
   address: string;
   zoom: number;
-  height: number;
+  width: number;
   widthSuffix: "px" | "%";
 }
