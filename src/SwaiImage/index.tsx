@@ -8,7 +8,7 @@ const Map = { Editor, View };
 export default Map;
 
 Brizy.registerComponent({
-  id: "Brizy.ThirdParty.SwaiImage",
+  id: "Brizy.ThirdParty.Container",
   component: {
     editor: Editor,
     view: View
