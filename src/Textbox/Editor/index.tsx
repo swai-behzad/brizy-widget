@@ -50,6 +50,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
         );
 
         const data = await response.json();
+        console.log(data);
         if (data?.uniqueId) {
           setUniqueId(data.uniqueId);
         }
