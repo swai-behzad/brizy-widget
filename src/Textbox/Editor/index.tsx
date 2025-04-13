@@ -45,10 +45,8 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
       .join(" "),
     verticalAlign:
       script === "super" ? "super" : script === "sub" ? "sub" : "baseline",
-    // Optional custom styles, like width/softness could be added here
-    // fontStretch is not widely supported but related to fontWidth
-    fontStretch: `${fontWidth}%`, // experimental, not all browsers support
-    opacity: fontSoftness < 100 ? fontSoftness / 100 : 1 // optional use of softness as opacity
+    fontStretch: `${fontWidth}%`,
+    opacity: fontSoftness < 100 ? fontSoftness / 100 : 1
   };
 
   return (
