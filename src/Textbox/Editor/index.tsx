@@ -112,6 +112,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
         suppressContentEditableWarning
         onInput={handleInput}
         onBlur={handleBlur}
+        tabIndex={0}
         //   style={textStyle}
       >
         {text}
