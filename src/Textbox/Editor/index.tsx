@@ -68,6 +68,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   };
 
   const handleBlur = async () => {
+    console.log("handleBlur called");
     if (!uniqueId) return;
 
     try {
@@ -81,7 +82,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
           value: text
         })
       });
-      console.log("handleBlur");
+      console.log("handleBlur done");
     } catch (error) {
       console.error("Error updating text on blur:", error);
     }
