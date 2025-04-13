@@ -51,13 +51,16 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
 
   return (
     <div
-      // data-unique-id={uniqueId}
-      contentEditable
-      suppressContentEditableWarning
-      onInput={handleInput}
-      style={textStyle}
+    // data-unique-id={uniqueId}
     >
-      {text}
+      <div
+        contentEditable
+        suppressContentEditableWarning
+        onInput={handleInput}
+        style={textStyle}
+      >
+        {text}
+      </div>
       <button onClick={() => console.log(props)}>log props</button>
     </div>
   );
