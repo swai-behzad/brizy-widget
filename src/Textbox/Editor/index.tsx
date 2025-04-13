@@ -51,8 +51,8 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
 
         const data = await response.json();
         console.log(data);
-        if (data?.uniqueId) {
-          setUniqueId(data.uniqueId);
+        if (data.data?.uniqueId) {
+          setUniqueId(data.data?.uniqueId);
         }
       } catch (error) {
         console.error("Error fetching uniqueId:", error);
