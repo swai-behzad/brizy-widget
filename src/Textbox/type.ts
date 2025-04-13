@@ -1,4 +1,7 @@
 export interface TextboxInterface {
+  _id: string;
+  device: string;
+  thirdPartyId: string;
   editTextControl: string;
   typographyControlBold: boolean;
   typographyControlFontFamily: string;

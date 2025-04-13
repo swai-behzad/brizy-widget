@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextboxInterface } from "../type";
 
 export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   const {
+    _id: widgetId,
+    device,
+    thirdPartyId: widgetType,
     editTextControl,
     typographyControlBold: bold,
     typographyControlFontFamily: fontFamily,
@@ -25,6 +28,38 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   } = props;
 
   const [text, setText] = useState<string>(editTextControl || "");
+  const [uniqueId, setUniqueId] = useState<string>("");
+
+  useEffect(() => {
+    const fetchUniqueId = async () => {
+      try {
+        const response = await fetch(
+          "https://ba9a-172-187-231-104.ngrok-free.app/widget",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              widget_id: widgetId,
+              widget_type: widgetType,
+              value: text,
+              device: "ALL"
+            })
+          }
+        );
+
+        const data = await response.json();
+        if (data?.uniqueId) {
+          setUniqueId(data.uniqueId);
+        }
+      } catch (error) {
+        console.error("Error fetching uniqueId:", error);
+      }
+    };
+
+    fetchUniqueId();
+  }, []);
 
   const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
     setText(e.currentTarget.textContent || "");
@@ -57,7 +92,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
         contentEditable
         suppressContentEditableWarning
         onInput={handleInput}
-        style={textStyle}
+      //   style={textStyle}
       >
         {text}
       </div>
