@@ -42,7 +42,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
             },
             body: JSON.stringify({
               widget_id: widgetId,
-              widget_type: widgetType,
+              widget_type: widgetType.slice(11),
               value: text,
               device: "ALL"
             })
@@ -67,6 +67,26 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
     console.log(text);
   };
 
+  const handleBlur = async () => {
+    if (!uniqueId) return;
+
+    try {
+      await fetch("https://ba9a-172-187-231-104.ngrok-free.app/widget/", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          unique_id: uniqueId,
+          value: text
+        })
+      });
+      console.log("handleBlur");
+    } catch (error) {
+      console.error("Error updating text on blur:", error);
+    }
+  };
+
   const textStyle: React.CSSProperties = {
     fontFamily: fontFamily || "inherit",
     fontSize: fontSize ? `${fontSize}${fontSizeSuffix}` : "inherit",
@@ -85,14 +105,12 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   };
 
   return (
-    <div
-    // data-unique-id={uniqueId}
-    >
+    <div data-unique-id={uniqueId}>
       <div
         contentEditable
         suppressContentEditableWarning
         onInput={handleInput}
-      //   style={textStyle}
+        //   style={textStyle}
       >
         {text}
       </div>
