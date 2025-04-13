@@ -51,8 +51,8 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
 
         const data = await response.json();
         console.log(data);
-        if (data.data?.uniqueId) {
-          setUniqueId(data.data?.uniqueId);
+        if (data.data?.unique_id) {
+          setUniqueId(data.data?.unique_id);
         }
       } catch (error) {
         console.error("Error fetching uniqueId:", error);
@@ -70,6 +70,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
 
   const handleBlur = async () => {
     console.log("handleBlur called");
+    console.log(uniqueId);
     if (!uniqueId) return;
 
     try {
