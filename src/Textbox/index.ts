@@ -1,5 +1,5 @@
 import { Brizy } from "@brizy/core";
-import { TextboxEditor } from "./Editor";
+import { TextboxEditorL } from "./Editor";
 import { TextboxView } from "./View";
 
 Brizy.registerComponent({
@@ -7,7 +7,7 @@ Brizy.registerComponent({
   title: "Textbox",
   category: "custom",
   component: {
-    editor: TextboxEditor,
+    editor: TextboxEditorL,
     view: TextboxView
   },
   options: ({ getValue }: any) => {
