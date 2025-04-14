@@ -28,7 +28,6 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   } = props;
 
   const [text, setText] = useState<string>(editTextControl || "");
-  const [uniqueId, setUniqueId] = useState<string>("");
 
   useEffect(() => {
     const fetchUniqueId = async () => {
@@ -48,12 +47,6 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
             })
           }
         );
-
-        const data = await response.json();
-        console.log(data);
-        if (data.data?.unique_id) {
-          setUniqueId(data.data?.unique_id);
-        }
       } catch (error) {
         console.error("Error fetching uniqueId:", error);
       }
@@ -70,9 +63,6 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
 
   const handleBlur = async () => {
     console.log("handleBlur called");
-    console.log(uniqueId);
-    if (!uniqueId) return;
-
     try {
       await fetch("https://ba9a-172-187-231-104.ngrok-free.app/widget/", {
         method: "PUT",
@@ -80,7 +70,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          unique_id: uniqueId,
+          widget_id: widgetId,
           value: text
         })
       });
@@ -108,7 +98,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   };
 
   return (
-    <div data-unique-id={uniqueId}>
+    <div>
       <div
         contentEditable
         suppressContentEditableWarning

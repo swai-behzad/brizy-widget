@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { TextboxInterface } from "../type";
 
 export const TextboxView: React.FC<TextboxInterface> = (props) => {
@@ -27,40 +27,6 @@ export const TextboxView: React.FC<TextboxInterface> = (props) => {
     typographyControlVariableFontWeight: variableFontWeight
   } = props;
 
-  const [text, setText] = useState<string>(editTextControl || "");
-  const [uniqueId, setUniqueId] = useState<string>("");
-
-  useEffect(() => {
-    const fetchUniqueId = async () => {
-      try {
-        const response = await fetch(
-          "https://ba9a-172-187-231-104.ngrok-free.app/widget",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              widget_id: widgetId,
-              widget_type: widgetType.slice(11),
-              device: "ALL"
-            })
-          }
-        );
-
-        const data = await response.json();
-        console.log(data);
-        if (data.data?.unique_id) {
-          setUniqueId(data.data?.unique_id);
-        }
-      } catch (error) {
-        console.error("Error fetching uniqueId:", error);
-      }
-    };
-
-    fetchUniqueId();
-  }, []);
-
   const textStyle: React.CSSProperties = {
     fontFamily: fontFamily || "inherit",
     fontSize: fontSize ? `${fontSize}${fontSizeSuffix}` : "inherit",
@@ -78,5 +44,5 @@ export const TextboxView: React.FC<TextboxInterface> = (props) => {
     opacity: fontSoftness < 100 ? fontSoftness / 100 : 1
   };
 
-  return <div data-unique-id={uniqueId}>{text}</div>;
+  return <div>View for test</div>;
 };
