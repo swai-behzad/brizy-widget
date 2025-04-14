@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { TextboxInterface } from "../type";
 import { getPageIdFromUrl } from "../../utils/helper";
+import { MessageProvider } from "../../_components/MessageProvider";
 
 export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   const {
@@ -104,17 +105,19 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
 
   return (
     <div>
-      <div
-        contentEditable
-        suppressContentEditableWarning
-        onInput={handleInput}
-        onBlur={handleBlur}
-        tabIndex={0}
-        //   style={textStyle}
-      >
-        {text}
-      </div>
-      <button onClick={() => console.log(props)}>log props</button>
+      <MessageProvider>
+        <div
+          contentEditable
+          suppressContentEditableWarning
+          onInput={handleInput}
+          onBlur={handleBlur}
+          tabIndex={0}
+          //   style={textStyle}
+        >
+          {text}
+        </div>
+        <button onClick={() => console.log(props)}>log props</button>
+      </MessageProvider>
     </div>
   );
 };
