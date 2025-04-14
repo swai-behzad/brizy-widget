@@ -25,6 +25,8 @@ export const MessageProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [data, setData] = useState<MessagePayload | null>(null);
 
   useEffect(() => {
+    window.parent.postMessage({ type: "IFRAME_READY" }, "*");
+
     const handleMessage = (event: MessageEvent) => {
       if (event.origin !== "http://localhost:8080") return;
       const msg = event.data as MessageEventData;
