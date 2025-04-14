@@ -1,38 +1,24 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-// Types
 type MessagePayload = {
   userId: number;
-  token?: string;
-  message?: string;
+  token: string;
 };
 
-type MessageEventData = {
-  type: string;
-  payload: MessagePayload;
-};
-
-// Context type
-interface MessageContextType {
-  data: MessagePayload | null;
-}
-
-// Create context
-const MessageContext = createContext<MessageContextType>({ data: null });
-
-// Provider
 export const MessageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [data, setData] = useState<MessagePayload | null>(null);
 
   useEffect(() => {
-    window.parent.postMessage({ type: "IFRAME_READY" }, "*");
-
     const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== "http://localhost:8080") return;
-      const msg = event.data as MessageEventData;
-      if (msg?.type === "INIT_DATA") {
-        console.log("PostMessage received:", msg.payload);
-        setData(msg.payload);
+       if (event.origin !== "http://localhost:8080") return;
+       console.log(event.data);
+
+      if (event.data?.type === "INIT_DATA") {
+        console.log("📥 Data received in iframe:", event.data.payload);
+        setData(event.data.payload);
+
+        // ACK back to parent
+      //   window.parent.postMessage({ type: "MESSAGE_RECEIVED" }, event.origin);
       }
     };
 
@@ -40,14 +26,10 @@ export const MessageProvider: React.FC<{ children: React.ReactNode }> = ({ child
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
-  console.log(data);
+  if (!data) return null; // or a loader
 
   return (
-    <MessageContext.Provider value={{ data }}>
-      {children}
-    </MessageContext.Provider>
+    // Your provider logic goes here
+    <>{children}</>
   );
 };
-
-// Custom hook to use the context
-export const useMessageData = () => useContext(MessageContext);

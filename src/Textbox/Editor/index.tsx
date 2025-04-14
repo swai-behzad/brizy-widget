@@ -63,8 +63,6 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
 
   const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
     setText(e.currentTarget.textContent || "");
-    console.log("typing");
-    console.log(text);
   };
 
   const handleBlur = async () => {
