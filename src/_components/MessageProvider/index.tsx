@@ -10,6 +10,7 @@ export const MessageProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
+       console.log(event.origin);
        if (event.origin !== "http://localhost:8080") return;
        console.log(event.data);
 
@@ -26,7 +27,7 @@ export const MessageProvider: React.FC<{ children: React.ReactNode }> = ({ child
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
-  if (!data) return null; // or a loader
+//   if (!data) return null; // or a loader
 
   return (
     // Your provider logic goes here
