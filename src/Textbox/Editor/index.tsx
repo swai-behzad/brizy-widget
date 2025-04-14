@@ -31,6 +31,9 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   const [text, setText] = useState<string>(editTextControl || "");
 
   useEffect(() => {
+    const pageId = getPageIdFromUrl();
+    console.log(pageId);
+
     const fetchUniqueId = async () => {
       try {
         const response = await fetch(
@@ -41,7 +44,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
               "Content-Type": "application/json"
             },
             body: JSON.stringify({
-              page_id: getPageIdFromUrl(),
+              page_id: pageId,
               widget_id: widgetId,
               widget_type: widgetType.slice(11),
               value: text,
