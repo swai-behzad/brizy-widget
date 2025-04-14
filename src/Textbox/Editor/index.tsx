@@ -33,7 +33,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
     const fetchUniqueId = async () => {
       try {
         const response = await fetch(
-          "https://ba9a-172-187-231-104.ngrok-free.app/widget",
+          "https://2e8c-172-187-231-104.ngrok-free.app/widget",
           {
             method: "POST",
             headers: {
@@ -64,7 +64,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   const handleBlur = async () => {
     console.log("handleBlur called");
     try {
-      await fetch("https://ba9a-172-187-231-104.ngrok-free.app/widget/", {
+      await fetch("https://2e8c-172-187-231-104.ngrok-free.app/widget/", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
