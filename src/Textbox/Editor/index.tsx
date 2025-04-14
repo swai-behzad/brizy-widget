@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TextboxInterface } from "../type";
+import { getPageIdFromUrl } from "../../utils/helper";
 
 export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
   const {
@@ -40,6 +41,7 @@ export const TextboxEditorL: React.FC<TextboxInterface> = (props) => {
               "Content-Type": "application/json"
             },
             body: JSON.stringify({
+              page_id: getPageIdFromUrl(),
               widget_id: widgetId,
               widget_type: widgetType.slice(11),
               value: text,
