@@ -8,6 +8,8 @@ export function setLocalStorageValue(name: string, value: string) {
 
 export function getPageIdFromUrl() {
    const pathParts = window.location.pathname.split('/');
+   console.log(pathParts);
+   
    const pageId = pathParts[2]; // index 0 = '', 1 = 'test', 2 = pageId
    return pageId;
  }
