@@ -9,8 +9,10 @@ export const MessageProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [data, setData] = useState<MessagePayload | null>(null);
 
   useEffect(() => {
+     console.log("inside use effect");
     const handleMessage = (event: MessageEvent) => {
-       console.log(event.origin);
+       console.log("event: ", event.origin);
+       console.log("event.origin: ", event.origin);
        if (event.origin !== "http://localhost:8080") return;
        console.log(event.data);
 
